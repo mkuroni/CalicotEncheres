@@ -2,7 +2,7 @@
 
 **Durée** : 3 heures  
 **Équipes** : 2 personnes  
-**Date** : À METTRE
+**Date** : 15 mars 2025
 
 ## Mise en situation
 
