@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using Auctions.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Auctions.Data
@@ -12,15 +13,14 @@ namespace Auctions.Data
         public static void Seed(IServiceProvider serviceProvider)
         {
             var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
-
             // ############################  add users  ############################
             SeedUsers(context);
 
             // ############################  add products  ############################
-           SeedProducts(context);
+            SeedProducts(context);
         }
 
-         
+
         private static void SeedUsers(ApplicationDbContext context)
         {
             // ############################  add admin user  ############################        
@@ -139,7 +139,7 @@ namespace Auctions.Data
             // ############################  save changes  ############################
             context.SaveChanges();
         }
-    
+
 
         private static void SeedProducts(ApplicationDbContext context)
         {
@@ -149,37 +149,37 @@ namespace Auctions.Data
             {
                 context.Listings.AddRange(
                     new Listing
-                        {
-                            Title = "Xbox 360",
-                            Description = "Xbox 360 usagée mais en excellente condition, avec 2 manettes et 5 jeux.",
-                            Price = 199,
-                            ImagePath = "xbox360.jpg",
-                            IdentityUserId = identityUserAdmin?.Id
-                        },
-                        new Listing
-                        {
-                            Title = "iPhone 15 Pro",
-                            Description = "iPhone 15 Pro, 256GB, couleur or rose, en excellente condition.",
-                            Price = 699,
-                            ImagePath = "iphone-15-pro.jpg",
-                            IdentityUserId = identityUserAdmin?.Id
-                        },
-                        new Listing
-                        {
-                            Title = "MacBook Air M2",
-                            Description = "MacBook Air 13 pouces, M2, CPU 10 coeurs, 16Go RAM, 512Go SSD, en excellente condition.",
-                            Price = 1199,
-                            ImagePath = "macbook-air-13.jpg",
-                            IdentityUserId = identityUserAdmin?.Id
-                        },
-                        new Listing
-                        {
-                            Title = "Samsung Galaxy Watch 5",
-                            Description = "Montre intelligente Samsung Galaxy Watch 5, jamais utilisée, dans sa boîte.",
-                            Price = 375,
-                            ImagePath = "samsung-galaxy-watch5.jpg",
-                            IdentityUserId = identityUserAdmin?.Id
-                        }
+                    {
+                        Title = "Grand - Kakama",
+                        Description = "Grand Masque de la Vitesse",
+                        Price = 50,
+                        ImagePath = "Kakama_Pohatu.png",
+                        IdentityUserId = identityUserAdmin?.Id
+                    },
+                    new Listing
+                    {
+                        Title = "Nuva - Hau",
+                        Description = "Kanohi Nuva de la protection",
+                        Price = 100,
+                        ImagePath = "Hau_Nuva_Tahu.png",
+                        IdentityUserId = identityUserAdmin?.Id
+                    },
+                    new Listing
+                    {
+                        Title = "Noble - Komau",
+                        Description = "Masque Noble du Contrôle de l'Esprit",
+                        Price = 25,
+                        ImagePath = "KomauNoble.png",
+                        IdentityUserId = identityUserAdmin?.Id
+                    },
+                    new Listing
+                    {
+                        Title = "Légendaire - Vahi",
+                        Description = "Le légendaire Masque du Temps",
+                        Price = 200,
+                        ImagePath = "BH_Orange_Kanohi_Vahi.png",
+                        IdentityUserId = identityUserAdmin?.Id
+                    }
                 );
             }
 
