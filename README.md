@@ -27,7 +27,7 @@ L'objectif est d'accompagner **Calicot** dans l’automatisation et l’optimisa
 
 Le diagramme de l'infrastructure Azure visée est le suivant :
 
-![diagramme infrastructure Azure de Calicot](./img/CS-Games-IaC-2024.jpg)
+![diagramme infrastructure Azure de Calicot](./img/CS-Games-IaC-2025.jpg)
 
 💡 Calicot dispose déjà d'une équipe de développement dédiée à la mise à jour du code applicatif de son site web, vous n’avez donc qu’à vous concentrer sur la partie `Infrastructure as Code` (IaC) du projet.
 
@@ -66,7 +66,7 @@ Voici un aperçu des composants à mettre en place dans l'infrastructure :
 - Forcer les communications via HTTPS uniquement.
 - Prévenir la mise en veille (*Always on*).
 - Notez qu'une application web sur Azure App Service requiert un Azure App Service Plan. Celui-ci devra être nommé `plan-calicot-dev-{code d'identification}`.
-- Ajoutez un `app settings` nommé `ImageUrl` ayant la valeur `https://stcalicotprod001.blob.core.windows.net/images/`.
+- Ajoutez un `app settings` nommé `ImageUrl` ayant la valeur `https://stcalicotprod000.blob.core.windows.net/images/`.
 - Configurez, pour cette application web, une identité managée assignée par le système.
 
 ### 3. **Création de la base de données** :
