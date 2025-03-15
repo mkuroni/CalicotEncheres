@@ -17,12 +17,14 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-# REQUIS 1
+resource "azurerm_subnet" "snet" {
+  name                 = "snet-dev-web-cc-11"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["10.0.1.0/24"]
 
-# REQUIS 2
-
-# REQUIS 3
-
-# REQUIS 4
-
+  depends_on = [
+    azurerm_virtual_network.vnet
+  ]
+}
 
