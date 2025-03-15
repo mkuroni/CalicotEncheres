@@ -1,6 +1,6 @@
 # Canada Central everywhere
 variable "location" {
-  default = "cac"
+  default = "canadacentral"
 }
 
 variable "resource_group_name" {
